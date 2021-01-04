@@ -1,0 +1,81 @@
+{% extends "ip/base.html" %}
+{% block body %}
+        <div class ="container">
+        <form action="{% url 'index'%}" method="post">
+            {% csrf_token %}
+        <div class="form_group">
+            <input type="text" class="form" name="search" placeholder="Enter IP Address">
+        </div>
+        <input type="submit" class="btn" value="Search">
+        </form>
+        <div class ="ip"><h1> {{data.ip}}</h1></div>
+        <div class="row">
+            <div class ="jumbo">
+                <span class="line0">An</span>
+                <span class="line1">API</span>
+                <span class="line2">Find</span>
+                <br>
+                <ul class="anim">
+                    <li class="text">Country</li>
+                    <li class="text">City</li>
+                    <li class="text">langtitude</li>
+                    <li class="text">postal</li>
+                    <li class="text">language</li>
+                </div>
+            </div>
+        </div>
+        <div class =" frame">
+            <table class="table">
+                <tr>
+                    <td>IP Address</td>
+                    <td>{{data.ip}}</td>
+                </tr>
+                <tr>
+                    <td>City</td>
+                    <td>{{data.city}}</td>
+                </tr>
+                <tr>
+                    <td>Region</td>
+                    <td>{{data.region}}</t>
+                </tr>
+                <tr>
+                    <td>Country</td>
+                    <td>{{data.country}}</t>
+                </tr>
+                <tr>
+                    <td>Postal Code Is</td>
+                    <td>{{data.postal}}</td>
+                </tr>
+                <tr>
+                    <td>latitude/longitude  </td>
+                    <td>{{data.latitude}}/{{data.longitude}}</td>
+                </tr>
+                
+                <tr>
+                    <td>Time Zone Information</td>
+                    <td> {{data.timezone}}</td>
+                </tr>
+                <tr>
+                    <td>Calling Code</td>
+                    <td>{{data.country_calling_code}}</td>
+                </tr>
+                <tr>
+                    <td>Available Currency Is y</td>
+                    <td>{{data.currency}}</td>
+                </tr>
+                <tr>
+                    <td>Available Language Is</td>
+                    <td>{{data.languages}}</td>
+                </tr>
+                <tr>
+                    <td>UTC offset Is</td>
+                    <td>{{data.utc_offset}}</td>
+                </tr>
+                <tr>
+                    <td>Internet Network Is</td>
+                    <td>{{data.org}}</t>
+                </tr>
+            </table>
+        </div>
+    </div>
+{% endblock %}
